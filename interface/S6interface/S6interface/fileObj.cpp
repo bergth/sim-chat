@@ -35,8 +35,18 @@ void fileObj::charAdd(string car)
 
 void fileObj::charDel()
 {
-	arrowLeft();
-	text[line].erase(col);
+	if (col > 0)
+	{
+		col--;
+		text[line].erase(text[line].begin()+ col);
+	}
+	else if (line > 0)
+	{
+		col = (text[line-1].size());
+		text[line - 1] += text[line];
+		text.erase(text.begin() + line);
+		line--;
+	}	
 }
 
 
@@ -96,9 +106,22 @@ void fileObj::arrowRight()
 void fileObj::returnCarriage()
 {
 	string newString;
-	text.insert(text.begin()+line+1, newString);
-	line++;
-	col = 0;
+	
+	if (col == text[line].size())
+	{
+		text.insert(text.begin() + line + 1, newString);
+		line++;
+		col = 0;
+	}
+	else
+	{
+		newString += text[line].substr(col);
+		text[line].erase(text[line].begin() + col, text[line].end());
+		text.insert(text.begin() + line + 1, newString);
+		line++;
+		col = 0;
+	}
+	
 }
 
 string fileObj::giveLine(int askedLine)
@@ -123,4 +146,15 @@ string fileObj::giveLine(int askedLine)
 int fileObj::lineNumber()
 {
 	return text.size();
+}
+
+void fileObj::endKey()
+{
+	col = text[line].size();
+}
+
+void fileObj::homeKey()
+{
+	col = 0;
+	line = 0;
 }

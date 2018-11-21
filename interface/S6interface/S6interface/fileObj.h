@@ -14,11 +14,17 @@ public:
 	~fileObj();
 	void charAdd(std::string car); //add character 'car' to the current cursor position
  	void charDel(); //deletes character at current cursor position
+	void returnCarriage(); //adds a newline to the document
+
+
 	void arrowUp(); //moves cursor up
 	void arrowDown(); //moves cursor down
 	void arrowLeft(); //moves cursor left
 	void arrowRight(); //moves cursor right
-	void returnCarriage(); //adds a newline to the document
+	void endKey(); //moves cursor to the end of the line
+	void homeKey(); //moves cursor to the beginning of the file
+
+
 	std::string giveLine(int line); //gives content of the specified line of the text
 
 	//must be moved to priv

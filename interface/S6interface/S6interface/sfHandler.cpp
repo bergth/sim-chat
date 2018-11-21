@@ -51,8 +51,27 @@ bool sfHandler::frame()
 				textInBuff = true;
 			}
 
+			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Delete))
+			{
+				ioObject.arrowRight();
+				ioObject.charDel();
+				textInBuff = true;
+			}
+
+			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::End))
+			{
+				ioObject.endKey();
+				textInBuff = true;
+			}
+
+			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Home))
+			{
+				ioObject.homeKey();
+				textInBuff = true;
+			}
+
 			//get text from user
-			if (event.type == sf::Event::TextEntered)
+			else if (event.type == sf::Event::TextEntered)
 			{
 				if (event.text.unicode < 256)
 				{
@@ -79,7 +98,7 @@ bool sfHandler::frame()
 			}
 
 			//updating window rendered text
-			else if (textInBuff)
+			if (textInBuff)
 			{
 				textInBuff = false;
 				for (int i = 0; i < ioObject.lineNumber(); i++)
