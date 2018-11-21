@@ -27,10 +27,6 @@ bool sfHandler::frame()
 {
 	if (window.isOpen())
 	{
-		
-
-
-
 		while (window.pollEvent(event))
 		{
 			//move arround file with arrows
@@ -55,8 +51,6 @@ bool sfHandler::frame()
 				textInBuff = true;
 			}
 
-			cout << "cursor in" << ioObject.col << ":" << ioObject.line << endl;
-
 			//get text from user
 			if (event.type == sf::Event::TextEntered)
 			{
@@ -68,7 +62,6 @@ bool sfHandler::frame()
 					}
 					else if (event.text.unicode == 8)
 					{
-						cout << "calling delete" << endl;
 						ioObject.charDel();
 					}
 					else
@@ -79,8 +72,6 @@ bool sfHandler::frame()
 
 					}
 
-					//log
-					cout << "kb: " << kbInput.str() << endl;
 
 					textInBuff = true;
 
@@ -91,7 +82,6 @@ bool sfHandler::frame()
 			else if (textInBuff)
 			{
 				textInBuff = false;
-				cout << "rendering Text" << endl;
 				for (int i = 0; i < ioObject.lineNumber(); i++)
 				{
 					printBuff += ioObject.giveLine(i);

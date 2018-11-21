@@ -20,15 +20,9 @@ fileObj::~fileObj()
 
 void fileObj::charAdd(string car)
 {
-	cout << "adding text in " << col << " " << line << endl;
-
-	cout << text[line] << endl;
-
-	cout << "clear" << endl;
 
 	if(text[line].size() > col)
 	{
-		cout << "text is inserted" << endl;
 		text[line].insert(col, car);
 	}
 	else
@@ -37,8 +31,6 @@ void fileObj::charAdd(string car)
 	}
 
 	col++;
-
-	cout << "end of charAdd" << endl;
 }
 
 void fileObj::charDel()

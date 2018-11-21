@@ -15,7 +15,7 @@ public:
 	sfHandler();
 	~sfHandler();
 
-	bool frame();
+	bool frame(); //displays a frame of the interface, gets events. return false if window is closed
 
 private:
 	bool textInBuff;
