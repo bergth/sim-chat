@@ -1,0 +1,23 @@
+TODO //ici la liste des choses a faire
+
+//priority
+creer un mode inser
+faire le scroll (via touches uniquement, gerer les lignes trop longues ou le trop plein de lignes en somme)
+page up/down (répondre correctemnt au touches page up & down (+40/-40))
+réorganisation des classes (en vue de gérer mieux le texte et de dissocier le curseur du texte (je ne sais pas comment le faire en SFML pour le moment))
+le curseur propre (placer le curseur sur une layer au dessus du texte, afin qu'il ne décale plus le texte en passant)
+
+//that'll be great
+smooth coloring (parce que blanc sur noir c'est sympa mais c'est moche)
+permettre le save 
+permettre le load (par argument (path) hein, l'explo de fichier j'ai flemme la tt de suite)
+mouse react
+gerer la selection de caractères
+gerer les interactions avec le presse papier
+
+//wow man
+créer une taskbar 
+multifiles
+save on quit
+
+DONE // ici la liste des choses faites a ajouter au commit message
